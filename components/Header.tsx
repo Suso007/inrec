@@ -3,6 +3,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Pacifico } from 'next/font/google';
+
+const orbitron = Pacifico({ subsets: ['latin'], weight: ['400'] });
+
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +20,7 @@ export default function Header() {
   }, []);
 
   const isActive = (path: string) => pathname === path;
-
+  
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -41,13 +45,14 @@ export default function Header() {
               <img src="/logo.png" alt="INREC Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
-              <span
-                className={`font-pacifico font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent transition-all duration-500 ${
-                  isScrolled ? 'text-base sm:text-lg' : 'text-lg sm:text-xl lg:text-2xl'
-                }`}
-              >
-                INREC
-              </span>
+<span
+  className={`${orbitron.className} font-bold tracking-wide bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 bg-clip-text text-transparent drop-shadow-lg transition-all duration-500 ${
+    isScrolled ? 'text-base sm:text-lg' : 'text-lg sm:text-xl lg:text-2xl'
+  }`}
+>
+  INREC
+</span>
+
               <span
                 className={`text-gray-600 transition-all duration-500 ${
                   isScrolled ? 'text-[10px]' : 'text-[10px] sm:text-xs'
