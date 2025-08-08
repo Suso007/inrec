@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import { ScrollAnimatedElement, WigglyLine } from '../../components/ScrollAnimations';
 import InteractiveButton from '../../components/InteractiveButton';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export default function Services() {
   return (
@@ -14,7 +15,7 @@ export default function Services() {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
         <div 
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-50"
           style={{
             backgroundImage: `url('https://readdy.ai/api/search-image?query=professional%20drone%20services%20team%20working%20with%20advanced%20UAV%20technology%2C%20technical%20experts%20providing%20consultation%20and%20training%2C%20modern%20service%20center%20with%20blue%20lighting%20and%20professional%20equipment&width=1920&height=1080&seq=inrecserviceshero&orientation=landscape')`
           }}
@@ -435,45 +436,7 @@ export default function Services() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t-4 border-blue-200 bg-gradient-to-r from-slate-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-2xl font-bold font-pacifico text-blue-600 mb-4">INREC</h3>
-              <p className="text-gray-600">Innovative Technology Solutions</p>
-              <p className="text-sm text-blue-600 mt-2">Microsoft Partner</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Home</Link>
-                <Link href="/about" className="block text-gray-600 hover:text-blue-600 cursor-pointer">About</Link>
-                <Link href="/products" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Products</Link>
-                <Link href="/services" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Services</Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Solutions</h4>
-              <div className="space-y-2">
-                <p className="text-gray-600">Software Development</p>
-                <p className="text-gray-600">Drone Technology</p>
-                <p className="text-gray-600">Microsoft Solutions</p>
-                <p className="text-gray-600">Custom Development</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Contact</h4>
-              <div className="space-y-2">
-                <Link href="/contact" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Get in Touch</Link>
-                <Link href="/blogs" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Blog</Link>
-              </div>
-            </div>
-          </div>
-          <div className="text-center pt-8 border-t border-gray-200">
-            <p className="text-gray-600"> 2024 INREC. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const pacifico = Pacifico({
   weight: '400',
@@ -23,6 +24,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Inrec - From code to Sky",
   description: "Driving Innovations Into Technology",
+  icons: {
+    icon: "/logo.png"
+  },
+  creator: "Inrec",
+  publisher: "@Inrec",
 };
 
 export default function RootLayout({
@@ -36,6 +42,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
       >
         {children}
+        <Toaster position="top-right" toastOptions={{ duration: 4000 }} />
       </body>
     </html>
   );

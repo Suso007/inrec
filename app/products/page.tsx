@@ -5,47 +5,11 @@ import Header from '../../components/Header';
 import { ScrollAnimatedElement, WigglyLine } from '../../components/ScrollAnimations';
 import InteractiveButton from '../../components/InteractiveButton';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export default function Products() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <Header />
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `url('https://readdy.ai/api/search-image?query=collection%20of%20professional%20drones%20and%20UAV%20products%20displayed%20in%20modern%20tech%20showroom%20with%20software%20development%20screens%2C%20various%20drone%20models%20with%20blue%20lighting%20and%20computer%20monitors%20showing%20software%20interfaces%2C%20cutting-edge%20technology%20showcase&width=1920&height=1080&seq=inrecproductshero2&orientation=landscape')`
-          }}
-        />
-        
-        <ScrollAnimatedElement animation="fade">
-          <h1 className="text-6xl md:text-8xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            Our Products
-          </h1>
-        </ScrollAnimatedElement>
-
-        <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-gray-600">
-            Cutting-edge drone technology and innovative software solutions
-          </p>
-        </ScrollAnimatedElement>
-      </section>
-
-      <WigglyLine />
-
-      {/* Software Solutions Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-white via-indigo-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <ScrollAnimatedElement animation="fade">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
-              Customized Software Solutions
-            </h2>
-          </ScrollAnimatedElement>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {[
+  const products = [
               {
                 name: "Time & Attendance Management System",
                 category: "Business Management",
@@ -136,7 +100,46 @@ export default function Products() {
                 ],
                 description: "Built for your specific needs - tailored software solutions that grow with your business."
               }
-            ].map((product, index) => (
+            ]
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
+        <div 
+          className="absolute inset-0 opacity-80"
+          style={{
+            backgroundImage: `url('https://readdy.ai/api/search-image?query=collection%20of%20professional%20drones%20and%20UAV%20products%20displayed%20in%20modern%20tech%20showroom%20with%20software%20development%20screens%2C%20various%20drone%20models%20with%20blue%20lighting%20and%20computer%20monitors%20showing%20software%20interfaces%2C%20cutting-edge%20technology%20showcase&width=1920&height=1080&seq=inrecproductshero2&orientation=landscape')`
+          }}
+        />
+        
+        <ScrollAnimatedElement animation="fade">
+          <h1 className="text-6xl md:text-8xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Our Products
+          </h1>
+        </ScrollAnimatedElement>
+
+        <ScrollAnimatedElement animation="fade" delay={300}>
+          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-gray-600">
+            Cutting-edge drone technology and innovative software solutions
+          </p>
+        </ScrollAnimatedElement>
+      </section>
+
+      <WigglyLine />
+
+      {/* Software Solutions Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-white via-indigo-50 to-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <ScrollAnimatedElement animation="fade">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+              Customized Software Solutions
+            </h2>
+          </ScrollAnimatedElement>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {products.map((product, index) => (
               <ScrollAnimatedElement key={index} animation="fade" delay={index * 150}>
                 <div className="bg-white/90 backdrop-blur-sm border-2 border-slate-200 hover:border-blue-300 transition-all duration-300 rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
                   <img 
@@ -200,9 +203,9 @@ export default function Products() {
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             {[
               {
-                name: "INREC Pro X1",
+                name: "Comming soon...",
                 category: "Enterprise Grade",
-                price: "$15,999",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=professional%20enterprise%20drone%20INREC%20Pro%20X1%20with%20advanced%20camera%20system%2C%20sleek%20black%20carbon%20fiber%20design%2C%20high-end%20commercial%20quadcopter%20with%20blue%20LED%20accents%2C%20premium%20UAV%20technology&width=600&height=400&seq=inrecprox1&orientation=landscape",
                 features: [
                   "4K Ultra HD Camera with 3-axis gimbal",
@@ -215,9 +218,9 @@ export default function Products() {
                 applications: ["Professional Photography", "Industrial Inspection", "Surveying & Mapping"]
               },
               {
-                name: "INREC AgriMax",
+                name: "Comming soon...",
                 category: "Agriculture Specialist",
-                price: "$12,499",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=specialized%20agriculture%20drone%20INREC%20AgriMax%20with%20crop%20monitoring%20sensors%2C%20green%20and%20blue%20color%20scheme%2C%20agricultural%20UAV%20with%20spray%20system%20and%20multispectral%20camera%20over%20farmland&width=600&height=400&seq=inrecagrimax&orientation=landscape",
                 features: [
                   "Multispectral imaging system",
@@ -271,7 +274,7 @@ export default function Products() {
                       </div>
                     </div>
                     
-                    <InteractiveButton>Request Quote</InteractiveButton>
+                    <InteractiveButton onClick={() => window.open('https://inrecskybots.com', '_blank')} >Request Quote</InteractiveButton>
                   </div>
                 </div>
               </ScrollAnimatedElement>
@@ -294,44 +297,44 @@ export default function Products() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "INREC Guardian",
+                name: "Comming soon...",
                 category: "Security & Surveillance",
-                price: "$18,999",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=security%20surveillance%20drone%20INREC%20Guardian%20with%20night%20vision%20camera%2C%20military%20grade%20UAV%20with%20thermal%20imaging%2C%20professional%20security%20drone%20in%20dark%20color%20scheme%20with%20blue%20accents&width=400&height=300&seq=inrecguardian&orientation=landscape",
                 features: ["Thermal imaging camera", "Night vision capability", "Silent operation mode", "Encrypted data transmission"]
               },
               {
-                name: "INREC Inspector",
+                name: "Comming soon...",
                 category: "Industrial Inspection",
-                price: "$14,799",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=industrial%20inspection%20drone%20INREC%20Inspector%20with%20high-resolution%20cameras%2C%20orange%20and%20blue%20safety%20colors%2C%20professional%20UAV%20for%20infrastructure%20monitoring%20and%20facility%20inspection&width=400&height=300&seq=inrecinspector&orientation=landscape",
                 features: ["High-resolution zoom camera", "Gas detection sensors", "Confined space navigation", "Live video streaming"]
               },
               {
-                name: "INREC Rescue",
+                name: "Comming soon...",
                 category: "Search & Rescue",
-                price: "$16,499",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=search%20and%20rescue%20drone%20INREC%20Rescue%20with%20emergency%20equipment%2C%20bright%20orange%20and%20white%20rescue%20colors%2C%20professional%20emergency%20response%20UAV%20with%20medical%20supply%20drop%20system&width=400&height=300&seq=inrecrescue&orientation=landscape",
                 features: ["Thermal people detection", "Emergency supply drop", "Two-way communication", "GPS tracking beacon"]
               },
               {
-                name: "INREC Surveyor",
+                name: "Comming soon...",
                 category: "Mapping & Surveying",
-                price: "$13,299",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=surveying%20mapping%20drone%20INREC%20Surveyor%20with%20precision%20GPS%20and%20LiDAR%20sensors%2C%20professional%20yellow%20and%20blue%20colors%2C%20UAV%20for%20topographical%20mapping%20and%20land%20surveying&width=400&height=300&seq=inrecsurveyor&orientation=landscape",
                 features: ["LiDAR scanning system", "Centimeter-level GPS", "Photogrammetry suite", "Real-time mapping"]
               },
               {
-                name: "INREC Marine",
+                name: "Comming soon...",
                 category: "Marine Operations",
-                price: "$19,799",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=marine%20waterproof%20drone%20INREC%20Marine%20for%20ocean%20operations%2C%20water-resistant%20UAV%20with%20blue%20and%20white%20colors%2C%20professional%20maritime%20drone%20with%20flotation%20system%20over%20ocean&width=400&height=300&seq=inrecmarine&orientation=landscape",
                 features: ["Waterproof IP67 rating", "Salt-resistant coating", "Emergency flotation", "Marine radar system"]
               },
               {
-                name: "INREC Energy",
+                name: "Comming soon...",
                 category: "Power & Utilities",
-                price: "$15,599",
+                price: "Comming soon...",
                 image: "https://readdy.ai/api/search-image?query=utility%20power%20line%20inspection%20drone%20INREC%20Energy%2C%20professional%20UAV%20with%20specialized%20sensors%20for%20electrical%20infrastructure%2C%20industrial%20drone%20near%20power%20lines%20with%20safety%20colors&width=400&height=300&seq=inrecenergy&orientation=landscape",
                 features: ["Electromagnetic field sensors", "Power line navigation", "Thermal anomaly detection", "Corona discharge detection"]
               }
@@ -349,7 +352,7 @@ export default function Products() {
                         <h3 className="text-xl font-bold text-gray-800 mb-1">{product.name}</h3>
                         <span className="text-blue-600 text-sm font-medium">{product.category}</span>
                       </div>
-                      <div className="text-xl font-bold text-blue-600">{product.price}</div>
+                      <div className="text-xl font-bold text-blue-600 hidden">{product.price}</div>
                     </div>
                     
                     <ul className="space-y-1 mb-4">
@@ -361,7 +364,7 @@ export default function Products() {
                       ))}
                     </ul>
                     
-                    <InteractiveButton>Learn More</InteractiveButton>
+                    <InteractiveButton onClick={() => window.open('https://inrecskybots.com', '_blank')}>Learn More</InteractiveButton>
                   </div>
                 </div>
               </ScrollAnimatedElement>
@@ -389,9 +392,7 @@ export default function Products() {
 
           <ScrollAnimatedElement animation="fade" delay={400}>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Link href="/contact">
-                <InteractiveButton>Request Quote</InteractiveButton>
-              </Link>
+                <InteractiveButton onClick={() => window.open('https://inrecskybots.com', '_blank')}>Request Quote</InteractiveButton>
               <Link href="/services">
                 <InteractiveButton variant="secondary">View Services</InteractiveButton>
               </Link>
@@ -401,44 +402,7 @@ export default function Products() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t-4 border-blue-200 bg-gradient-to-r from-slate-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-2xl font-bold font-pacifico text-blue-600 mb-4">INREC</h3>
-              <p className="text-gray-600">Innovative Technology Solutions</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Home</Link>
-                <Link href="/about" className="block text-gray-600 hover:text-blue-600 cursor-pointer">About</Link>
-                <Link href="/products" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Products</Link>
-                <Link href="/services" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Services</Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Solutions</h4>
-              <div className="space-y-2">
-                <p className="text-gray-600">Software Development</p>
-                <p className="text-gray-600">Drone Technology</p>
-                <p className="text-gray-600">Custom Solutions</p>
-                <p className="text-gray-600">System Integration</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Contact</h4>
-              <div className="space-y-2">
-                <Link href="/contact" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Get in Touch</Link>
-                <Link href="/blogs" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Blog</Link>
-              </div>
-            </div>
-          </div>
-          <div className="text-center pt-8 border-t border-gray-200">
-            <p className="text-gray-600">© 2024 INREC. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }

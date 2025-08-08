@@ -6,6 +6,9 @@ import AnimatedEyes from '../../components/AnimatedEyes';
 import { ScrollAnimatedElement, WigglyLine } from '../../components/ScrollAnimations';
 import InteractiveButton from '../../components/InteractiveButton';
 import Link from 'next/link';
+import InquiryForm from './contactForm';
+import FAQSection from './faq';
+import Footer from '@/components/Footer';
 
 export default function Contact() {
   return (
@@ -42,7 +45,7 @@ export default function Contact() {
 
       {/* Contact Form Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-white via-blue-50 to-slate-50">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <ScrollAnimatedElement animation="fade">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
               Get In Touch
@@ -69,7 +72,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-800">Headquarters</h4>
-                      <p className="text-gray-600">1234 Innovation Drive, Tech City, TC 12345</p>
+                      <p className="text-gray-600">Domkol Bazar, Murshidabad, West Bengal, India - 742303</p>
                     </div>
                   </div>
 
@@ -79,7 +82,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-800">Phone</h4>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
+                      <p className="text-gray-600">+91 9830029529</p>
                     </div>
                   </div>
 
@@ -99,7 +102,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-800">Business Hours</h4>
-                      <p className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM EST</p>
+                      <p className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM IST</p>
                     </div>
                   </div>
                 </div>
@@ -107,7 +110,7 @@ export default function Contact() {
             </ScrollAnimatedElement>
 
             <ScrollAnimatedElement animation="fade" delay={200}>
-              <form 
+              {/* <form 
                 id="contact-form"
                 className="space-y-6 bg-white/90 backdrop-blur-sm p-8 border-2 border-blue-200 rounded-lg shadow-lg"
                 onSubmit={(e) => {
@@ -234,7 +237,8 @@ export default function Contact() {
                 </div>
                 
                 <InteractiveButton type="submit">Send Message</InteractiveButton>
-              </form>
+              </form> */}
+              <InquiryForm/>
             </ScrollAnimatedElement>
           </div>
         </div>
@@ -255,23 +259,23 @@ export default function Contact() {
             {[ 
               {
                 city: "Tech City Headquarters",
-                address: "1234 Innovation Drive\nTech City, TC 12345",
-                phone: "+1 (555) 123-4567",
-                email: "headquarters@inrec.com",
+                address: "Domkol Bazar, Murshidabad, West Bengal, India - 742303",
+                phone: "+91-9830029529",
+                email: "info@inrec.com",
                 image: "https://readdy.ai/api/search-image?query=modern%20corporate%20headquarters%20building%20with%20glass%20facade%20and%20blue%20accents%2C%20professional%20technology%20company%20office%20building%2C%20contemporary%20architecture%20with%20clean%20lines&width=400&height=300&seq=inrechq&orientation=landscape"
               },
               {
-                city: "West Coast Office",
-                address: "5678 Silicon Avenue\nSan Francisco, CA 94105",
-                phone: "+1 (555) 234-5678",
-                email: "westcoast@inrec.com",
+                city: "Office 2",
+                address: "Comming soon...",
+                phone: "Comming soon...",
+                email: "info@inrec.com",
                 image: "https://readdy.ai/api/search-image?query=modern%20office%20building%20in%20San%20Francisco%20with%20contemporary%20design%2C%20professional%20tech%20company%20facility%20on%20west%20coast%2C%20sleek%20architecture%20with%20blue%20and%20white%20elements&width=400&height=300&seq=inrecwest&orientation=landscape"
               },
               {
-                city: "European Division",
-                address: "9012 Innovation Park\nLondon, UK EC2M 7PP",
-                phone: "+44 20 1234 5678",
-                email: "europe@inrec.com",
+                city: "Office 3",
+                address: "Comming soon...",
+                phone: "Comming soon...",
+                email: "info@inrec.com",
                 image: "https://readdy.ai/api/search-image?query=modern%20European%20office%20building%20in%20London%20with%20professional%20design%2C%20contemporary%20corporate%20facility%2C%20international%20business%20center%20with%20blue%20corporate%20theme&width=400&height=300&seq=inreceurope&orientation=landscape"
               }
             ].map((location, index) => (
@@ -310,7 +314,7 @@ export default function Contact() {
           <ScrollAnimatedElement animation="fade" delay={600}>
             <div className="bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9474978252474!2d-73.98656668459418!3d40.748817679327544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1635180000000!5m2!1sen!2sus"
+                src="https://maps.google.com/maps?q=Domkol%20Bazar%2C%20Murshidabad%2C%20West%20Bengal%2C%20India%20-%20742303&t=m&z=12&output=embed&iwloc=near"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
@@ -327,51 +331,7 @@ export default function Contact() {
       <WigglyLine />
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-white via-slate-50 to-blue-50">
-        <div className="max-w-4xl mx-auto">
-          <ScrollAnimatedElement animation="fade">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
-              Frequently Asked Questions
-            </h2>
-          </ScrollAnimatedElement>
-
-          <div className="space-y-6">
-            {[ 
-              {
-                question: "What software solutions do you offer?",
-                answer: "We offer comprehensive software solutions including Time & Attendance Management, Canteen Management, Hostel Management, and custom software development. All solutions can be integrated with Microsoft technologies and cloud services."
-              },
-              {
-                question: "What are the benefits of being a Microsoft partner?",
-                answer: "As a Microsoft partner, we provide exclusive access to Azure cloud services, Office 365 integration, Power Platform development, enterprise-grade security, and ongoing Microsoft support with competitive pricing."
-              },
-              {
-                question: "Do you provide pilot training and certification?",
-                answer: "Yes, we offer complete training programs including Part 107 commercial pilot certification, advanced flight operations, safety protocols, and ongoing recertification programs."
-              },
-              {
-                question: "What industries do you serve?",
-                answer: "We serve multiple industries including education, healthcare, agriculture, construction, security, energy, and corporate enterprises. Each solution is customized for specific industry requirements."
-              },
-              {
-                question: "Do you offer international support?",
-                answer: "Yes, we have offices in the US, Europe, and partnerships worldwide. We provide global support for our products and services with local expertise and Microsoft technology backing."
-              },
-              {
-                question: "How long does it take to implement a solution?",
-                answer: "Implementation time varies: software solutions typically take 4-8 weeks, drone deployments 2-4 weeks, and custom development projects 8-12 weeks including design, testing, and training."
-              }
-            ].map((faq, index) => (
-              <ScrollAnimatedElement key={index} animation="fade" delay={index * 150}>
-                <div className="bg-white/90 backdrop-blur-sm border-2 border-slate-200 hover:border-blue-300 rounded-lg shadow-lg p-6 transition-all duration-300">
-                  <h3 className="text-lg font-bold text-gray-800 mb-3">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                </div>
-              </ScrollAnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection/>
 
       <WigglyLine />
 
@@ -402,45 +362,7 @@ export default function Contact() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t-4 border-blue-200 bg-gradient-to-r from-slate-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-2xl font-bold font-pacifico text-blue-600 mb-4">INREC</h3>
-              <p className="text-gray-600">Innovative Technology Solutions</p>
-              <p className="text-sm text-blue-600 mt-2">Microsoft Partner</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Home</Link>
-                <Link href="/about" className="block text-gray-600 hover:text-blue-600 cursor-pointer">About</Link>
-                <Link href="/products" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Products</Link>
-                <Link href="/services" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Services</Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Solutions</h4>
-              <div className="space-y-2">
-                <p className="text-gray-600">Software Development</p>
-                <p className="text-gray-600">Drone Technology</p>
-                <p className="text-gray-600">Microsoft Solutions</p>
-                <p className="text-gray-600">Custom Development</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-gray-800">Contact</h4>
-              <div className="space-y-2">
-                <Link href="/contact" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Get in Touch</Link>
-                <Link href="/blogs" className="block text-gray-600 hover:text-blue-600 cursor-pointer">Blog</Link>
-              </div>
-            </div>
-          </div>
-          <div className="text-center pt-8 border-t border-gray-200">
-            <p className="text-gray-600"> 2024 INREC. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
