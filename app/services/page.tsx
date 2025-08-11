@@ -226,7 +226,7 @@ export default function Services() {
                     </div>
                     
                     <div className="flex justify-between items-center">
-                      <span className="text-2xl font-bold text-blue-600">{service.pricing}</span>
+                      <span hidden className="text-2xl font-bold text-blue-600">{service.pricing}</span>
                       <InteractiveButton>Get Quote</InteractiveButton>
                     </div>
                   </div>
