@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development next dev -H localhost -p 5173",
+    "dev": "cross-env NODE_ENV=development next dev -H localhost -p 5174 --turbopack",
     "build": "next build",
     "lint": "next lint",
     "start": "next start"

@@ -241,7 +241,7 @@ export default function About() {
       <WigglyLine />
 
       {/* Leadership Team */}
-      <section className="py-20 px-6 bg-gradient-to-b from-white via-slate-50 to-blue-50">
+      <section hidden className="py-20 px-6 bg-gradient-to-b from-white via-slate-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <ScrollAnimatedElement animation="fade">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
