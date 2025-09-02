@@ -63,13 +63,13 @@ export default function About() {
         />
 
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-6xl md:text-8xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             About INREC
           </h1>
         </ScrollAnimatedElement>
 
         <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-gray-600">
+          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent drop-shadow-md">
             Pioneering the future of drone technology with innovation,
             precision, and excellence
           </p>
@@ -91,24 +91,14 @@ export default function About() {
             <ScrollAnimatedElement animation="fade">
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Founded in 2020, INREC emerged from a vision to revolutionize
-                  industries through cutting-edge drone technology and
-                  customized software solutions. Our journey began with a small
-                  team of passionate engineers and innovators who believed in
-                  the transformative power of technology.
+                  We specialize in helping businesses design, develop, and modernize custom web and mobile applications tailored to their unique needs. We develop resilient, scalable, and feature-rich applications tailored for seamless performance across today’s leading platforms and devices.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Today, we stand as a leading provider of innovative technology
-                  solutions, serving clients across education, healthcare,
-                  agriculture, construction, and enterprise sectors. As a proud
-                  Microsoft partner, we leverage world-class cloud and
-                  enterprise technologies to deliver superior solutions.
+By harnessing the power of the latest technology stacks, we craft solutions that are secure, highly customizable, and easy to maintain over time. Our comprehensive application development services cover every stage—from initial consultation and development to testing, deployment, and continuous support—ensuring long-term value and sustainable success for your business.
+Partner with us to future-proof your business with high-quality digital solutions that deliver measurable value and exceptional user experiences.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  With over 500 successful projects completed and partnerships
-                  with Fortune 500 companies, INREC continues to push the
-                  boundaries of what's possible with both software development
-                  and drone technology.
+Our clients value us for our reliable budget and timeline management, transparent collaboration, and consistently high-quality service.
                 </p>
               </div>
             </ScrollAnimatedElement>
@@ -131,49 +121,38 @@ export default function About() {
         <div className="max-w-6xl mx-auto text-center">
           <ScrollAnimatedElement animation="fade">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-              Microsoft Partnership Excellence
+              Proud Microsoft Partner
             </h2>
           </ScrollAnimatedElement>
 
           <ScrollAnimatedElement animation="fade" delay={200}>
             <p className="text-xl md:text-2xl mb-12 leading-relaxed text-blue-100 max-w-4xl mx-auto">
-              Our strategic partnership with Microsoft enables us to deliver
-              enterprise-grade solutions with Azure cloud integration, Office
-              365 productivity tools, and Power Platform automation
+              As an official Microsoft partner, we leverage cutting-edge cloud technologies and enterprise solutions to deliver superior software and drone integration services
             </p>
           </ScrollAnimatedElement>
 
           <ScrollAnimatedElement animation="fade" delay={400}>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-blue-400">
-                <div className="text-4xl mb-4">☁️</div>
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Azure Cloud
-                </h3>
-                <p className="text-blue-100">
-                  Scalable cloud infrastructure for data processing, analytics,
-                  and enterprise applications
-                </p>
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400">
+                <div className="mb-4">
+                  <img src="/Azure.png" alt="Azure Cloud" className="w-28 h-20 mx-auto" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Azure Cloud Integration</h3>
+                <p className="text-blue-100 text-sm">Scalable cloud solutions for data processing and analytics</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-blue-400">
-                <div className="text-4xl mb-4">💼</div>
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Enterprise Solutions
-                </h3>
-                <p className="text-blue-100">
-                  Office 365, Teams, and SharePoint integration for enhanced
-                  productivity
-                </p>
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400">
+                <div className="mb-4">
+                  <img src="/office365.png" alt="Office 365" className="w-24 h-20 mx-auto" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Office 365 Solutions</h3>
+                <p className="text-blue-100 text-sm">Enterprise productivity and collaboration tools</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-blue-400">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Power Platform
-                </h3>
-                <p className="text-blue-100">
-                  Custom applications, process automation, and business
-                  intelligence solutions
-                </p>
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400">
+                <div className="mb-4">
+                  <img src="/powerplatforms.png" alt="Power Platform" className="w-20 h-20 mx-auto" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Power Platform</h3>
+                <p className="text-blue-100 text-sm">Custom applications and business process automation</p>
               </div>
             </div>
           </ScrollAnimatedElement>
@@ -187,14 +166,14 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-12">
             <ScrollAnimatedElement animation="fade">
-              <div className="text-center p-8 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg">
+              <div className="text-center p-8 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                   🎯
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   Our Mission
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed flex-grow">
                   To empower industries with innovative technology solutions
                   including drone capabilities and customized software that
                   enhance efficiency, safety, and productivity while driving
@@ -204,14 +183,14 @@ export default function About() {
             </ScrollAnimatedElement>
 
             <ScrollAnimatedElement animation="fade" delay={200}>
-              <div className="text-center p-8 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg">
+              <div className="text-center p-8 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                   🚀
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   Our Vision
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed flex-grow">
                   To be the global leader in integrated technology solutions,
                   creating intelligent aerial and software systems that
                   transform how industries operate and connect with the world.
@@ -220,14 +199,14 @@ export default function About() {
             </ScrollAnimatedElement>
 
             <ScrollAnimatedElement animation="fade" delay={400}>
-              <div className="text-center p-8 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg">
+              <div className="text-center p-8 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                   💎
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   Our Values
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed flex-grow">
                   Innovation, integrity, excellence, and sustainability guide
                   everything we do. We believe in pushing boundaries while
                   maintaining the highest ethical standards and quality.
@@ -238,7 +217,6 @@ export default function About() {
         </div>
       </section>
 
-      <WigglyLine />
 
       {/* Leadership Team */}
       <section hidden className="py-20 px-6 bg-gradient-to-b from-white via-slate-50 to-blue-50">

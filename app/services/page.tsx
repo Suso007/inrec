@@ -22,13 +22,13 @@ export default function Services() {
         />
         
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-6xl md:text-8xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             Our Services
           </h1>
         </ScrollAnimatedElement>
 
         <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-gray-600">
+          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent drop-shadow-md">
             Complete drone solutions from consultation to deployment and ongoing support
           </p>
         </ScrollAnimatedElement>
@@ -77,7 +77,7 @@ export default function Services() {
               }
             ].map((service, index) => (
               <ScrollAnimatedElement key={index} animation="fade" delay={index * 300}>
-                <div className="bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="h-full bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
                   <img 
                     src={service.image}
                     alt={service.title}
@@ -108,31 +108,6 @@ export default function Services() {
               </ScrollAnimatedElement>
             ))}
           </div>
-
-          {/* Microsoft Partnership Benefits */}
-          <ScrollAnimatedElement animation="fade">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 rounded-lg text-white text-center">
-              <h3 className="text-2xl font-bold mb-4">Microsoft Partnership Benefits</h3>
-              <p className="text-blue-100 mb-6">As a Microsoft partner, we offer exclusive access to enterprise-grade tools and services</p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                  <div className="text-2xl mb-2">☁️</div>
-                  <h4 className="font-bold mb-2">Azure Cloud</h4>
-                  <p className="text-sm text-blue-100">Scalable cloud infrastructure</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                  <div className="text-2xl mb-2">💼</div>
-                  <h4 className="font-bold mb-2">Office 365</h4>
-                  <p className="text-sm text-blue-100">Complete productivity suite</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                  <div className="text-2xl mb-2">⚡</div>
-                  <h4 className="font-bold mb-2">Power Platform</h4>
-                  <p className="text-sm text-blue-100">Custom app development</p>
-                </div>
-              </div>
-            </div>
-          </ScrollAnimatedElement>
         </div>
       </section>
 
@@ -203,7 +178,7 @@ export default function Services() {
               }
             ].map((service, index) => (
               <ScrollAnimatedElement key={index} animation="fade" delay={index * 300}>
-                <div className="bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="h-full bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
                   <img 
                     src={service.image}
                     alt={service.title}
@@ -393,7 +368,7 @@ export default function Services() {
               }
             ].map((step, index) => (
               <ScrollAnimatedElement key={index} animation="fade" delay={index * 200}>
-                <div className="text-center p-6 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg">
+                <div className="h-full text-center p-6 bg-white/80 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg">
                   <div className="text-3xl font-bold text-blue-600 mb-2">{step.step}</div>
                   <div className="text-4xl mb-4">{step.icon}</div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{step.title}</h3>

@@ -4,17 +4,19 @@
 import Header from '../components/Header';
 import { ScrollAnimatedElement, WigglyLine } from '../components/ScrollAnimations';
 import InteractiveButton from '../components/InteractiveButton';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
-  const [index, setIndex] = useState(0);
+  const [slideOrder, setSlideOrder] = useState([0, 1, 2]);
+  const [isAnimating, setIsAnimating] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [slidePosition, setSlidePosition] = useState(0);
 
-
+  // Original slides
   const bgSlides = [
     "https://readdy.ai/api/search-image?query=modern%20technology%20company%20contact%20center%20with%20professional%20customer%20service%20team%2C%20clean%20office%20environment%20with%20blue%20lighting%2C%20communication%20and%20support%20facility%20with%20advanced%20equipment&width=1920&height=1080&seq=inreccontacthero&orientation=landscape",
     "https://readdy.ai/api/search-image?query=advanced%20drone%20flying%20in%20modern%20tech%20environment%20with%20blue%20sky%20background%2C%20professional%20UAV%20technology%2C%20futuristic%20aerial%20vehicle%20with%20sleek%20design%2C%20high-tech%20industrial%20setting%20with%20clean%20minimalist%20aesthetic&width=1920&height=1080&seq=inrechero1&orientation=landscape",
@@ -27,15 +29,32 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const rotateSlides = useCallback(() => {
+    if (isAnimating) return;
+    
+    setIsAnimating(true);
+    setSlidePosition(-100); // Start slide animation
+
+    // After animation completes
+    setTimeout(() => {
+      // Rotate the order array by moving first element to the end
+      setSlideOrder(current => {
+        const newOrder = [...current.slice(1), current[0]];
+        return newOrder;
+      });
+      setSlidePosition(0); // Reset position without animation
+      setIsAnimating(false);
+    }, 1000);
+  }, [isAnimating]);
+
   useEffect(() => {
-    // simple autoplay
-    intervalRef.current = setInterval(() => {
-      setIndex((i) => (i + 1) % bgSlides.length);
-    }, 4000);
+    intervalRef.current = setInterval(rotateSlides, 5000);
     return () => {
-      intervalRef.current && clearInterval(intervalRef.current);
-    }
-  }, []);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [rotateSlides]);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -49,51 +68,154 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
-      <div className="absolute inset-0">
-        {bgSlides.map((src, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-opacity duration-700 ease-out will-change-[opacity]`}
-            style={{
-              opacity: i === index ? 0.8 : 0, // tweak as you like
-              backgroundImage: `url('${src}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              transform: `translateY(${scrollY * 0.5}px)`,
-              pointerEvents: "none",
-            }}
-          />
-        ))}
+      <div className="absolute inset-0 overflow-hidden">
+        <div 
+          className="relative w-full h-full"
+          style={{
+            transform: `translateX(${slidePosition}%)`,
+            transition: isAnimating ? 'transform 1000ms ease-out' : 'none'
+          }}
+        >
+          {slideOrder.map((index: number, i: number) => (
+            <div
+              key={`slide-${index}`}
+              className="absolute inset-0 w-full h-full"
+              style={{
+                opacity: 0.85,
+                backgroundImage: `url('${bgSlides[index]}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                transform: `translateX(${i * 100}%) translateY(${scrollY * 0.5}px)`,
+                pointerEvents: "none",
+              }}
+            >
+              <div className="absolute inset-0 bg-black bg-opacity-40" />
+            </div>
+          ))}
+        </div>
       </div>
-        
-        <ScrollAnimatedElement animation="fade">
-          <h1 className="text-7xl md:text-9xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent">
-            INREC
-          </h1>
-        </ScrollAnimatedElement>
 
-        <ScrollAnimatedElement animation="fade" delay={300}>
-          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6 text-gray-700">
-            From code to Sky
-          </h2>
-        </ScrollAnimatedElement>
+      <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
+        {/* Slide 1 */}
+        {slideOrder[0] === 0 && (
+          <div className="w-full">
+            <div className="max-w-4xl mx-auto text-center">
+              <ScrollAnimatedElement animation="fade">
+                <h1 className="text-3xl md:text-7xl font-bold mb-8 leading-tight text-white drop-shadow-lg">
+                  Inrec
+                </h1>
+              </ScrollAnimatedElement>
 
-        <ScrollAnimatedElement animation="fade" delay={600}>
-          <p className="text-xl md:text-2xl text-center max-w-4xl mt-8 leading-relaxed text-gray-600">
-            Leading the future with cutting-edge drone technologies, customized software solutions, and Microsoft partnership excellence
-          </p>
-        </ScrollAnimatedElement>
+              <ScrollAnimatedElement animation="fade" delay={300}>
+                <h2 className="text-2xl md:text-5xl font-semibold mb-6 text-white drop-shadow-md bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text">
+                  From Code to Sky
+                </h2>
+              </ScrollAnimatedElement>
 
-        <ScrollAnimatedElement animation="fade" delay={900}>
-          <div className="flex gap-4 mt-12">
-            <Link href="/products">
-              <InteractiveButton>Explore Products</InteractiveButton>
-            </Link>
-            <Link href="/contact">
-              <InteractiveButton variant="secondary">Get In Touch</InteractiveButton>
-            </Link>
+              <ScrollAnimatedElement animation="fade" delay={600}>
+                <p className="text-xl md:text-2xl max-w-3xl mx-auto mt-8 leading-relaxed text-white drop-shadow-md">
+                  Leading the future with cutting-edge drone technologies
+                </p>
+              </ScrollAnimatedElement>
+
+              <ScrollAnimatedElement animation="fade" delay={900}>
+                <div className="flex gap-6 mt-12 justify-center">
+                  <Link href="/products">
+                    <InteractiveButton>
+                      Explore Products
+                    </InteractiveButton>
+                  </Link>
+                  <Link href="/contact">
+                    <InteractiveButton variant="secondary">
+                      Get In Touch
+                    </InteractiveButton>
+                  </Link>
+                </div>
+              </ScrollAnimatedElement>
+            </div>
           </div>
-        </ScrollAnimatedElement>
+        )}
+
+        {/* Slide 2 */}
+        {slideOrder[0] === 1 && (
+          <div className="w-full">
+            <div className="max-w-4xl mx-auto text-center">
+              <ScrollAnimatedElement animation="fade">
+                <h1 className="text-3xl md:text-7xl font-bold mb-8 leading-tight text-white drop-shadow-lg bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text">
+                  Innovation
+                </h1>
+              </ScrollAnimatedElement>
+
+              <ScrollAnimatedElement animation="fade" delay={300}>
+                <h2 className="text-2xl md:text-5xl font-semibold mb-6 text-white drop-shadow-md">
+                  Advanced UAV Solutions
+                </h2>
+              </ScrollAnimatedElement>
+
+              <ScrollAnimatedElement animation="fade" delay={600}>
+                <p className="text-xl md:text-2xl max-w-3xl mx-auto mt-8 leading-relaxed text-white drop-shadow-md">
+                  Experience the next generation of drone technology
+                </p>
+              </ScrollAnimatedElement>
+
+              <ScrollAnimatedElement animation="fade" delay={900}>
+                <div className="flex gap-6 mt-12 justify-center">
+                  <Link href="/services">
+                    <InteractiveButton>
+                      Our Services
+                    </InteractiveButton>
+                  </Link>
+                  <Link href="/products">
+                    <InteractiveButton variant="secondary">
+                      View Drones
+                    </InteractiveButton>
+                  </Link>
+                </div>
+              </ScrollAnimatedElement>
+            </div>
+          </div>
+        )}
+
+        {/* Slide 3 */}
+        {slideOrder[0] === 2 && (
+          <div className="w-full">
+            <div className="max-w-4xl mx-auto text-center">
+              <ScrollAnimatedElement animation="fade">
+                <h1 className="text-3xl md:text-7xl font-bold mb-8 leading-tight text-white drop-shadow-lg bg-gradient-to-r from-indigo-400 to-blue-500 bg-clip-text">
+                  Solutions
+                </h1>
+              </ScrollAnimatedElement>
+
+              <ScrollAnimatedElement animation="fade" delay={300}>
+                <h2 className="text-2xl md:text-5xl font-semibold mb-6 text-white drop-shadow-md">
+                  Custom Software Development
+                </h2>
+              </ScrollAnimatedElement>
+
+              <ScrollAnimatedElement animation="fade" delay={600}>
+                <p className="text-xl md:text-2xl max-w-3xl mx-auto mt-8 leading-relaxed text-white drop-shadow-md">
+                  Tailored software solutions for your business needs
+                </p>
+              </ScrollAnimatedElement>
+
+              <ScrollAnimatedElement animation="fade" delay={900}>
+                <div className="flex gap-6 mt-12 justify-center">
+                  <Link href="/contact">
+                    <InteractiveButton>
+                      Start Project
+                    </InteractiveButton>
+                  </Link>
+                  <Link href="/services">
+                    <InteractiveButton variant="secondary">
+                      Learn More
+                    </InteractiveButton>
+                  </Link>
+                </div>
+              </ScrollAnimatedElement>
+            </div>
+          </div>
+        )}
+      </div>
       </section>
 
       <WigglyLine />
@@ -116,17 +238,23 @@ export default function Home() {
           <ScrollAnimatedElement animation="fade" delay={400}>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400">
-                <div className="text-3xl mb-4">☁️</div>
+                <div className="mb-4">
+                  <img src="/Azure.png" alt="Azure Cloud" className="w-28 h-20 mx-auto" />
+                </div>
                 <h3 className="text-xl font-bold text-white mb-2">Azure Cloud Integration</h3>
                 <p className="text-blue-100 text-sm">Scalable cloud solutions for data processing and analytics</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400">
-                <div className="text-3xl mb-4">💼</div>
+                <div className="mb-4">
+                  <img src="/office365.png" alt="Office 365" className="w-24 h-20 mx-auto" />
+                </div>
                 <h3 className="text-xl font-bold text-white mb-2">Office 365 Solutions</h3>
                 <p className="text-blue-100 text-sm">Enterprise productivity and collaboration tools</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400">
-                <div className="text-3xl mb-4">🔧</div>
+                <div className="mb-4">
+                  <img src="/powerplatforms.png" alt="Power Platform" className="w-20 h-20 mx-auto" />
+                </div>
                 <h3 className="text-xl font-bold text-white mb-2">Power Platform</h3>
                 <p className="text-blue-100 text-sm">Custom applications and business process automation</p>
               </div>
@@ -162,21 +290,21 @@ export default function Home() {
                 description: "Complete employee attendance tracking with biometric integration"
               },
               {
-                name: "Canteen Management",
+                name: "Canteen Management Solution",
                 status: "Available",
                 icon: "🍽️",
                 image: "https://readdy.ai/api/search-image?query=digital%20canteen%20management%20system%20interface%20showing%20meal%20planning%2C%20inventory%20tracking%20and%20payment%20processing%2C%20modern%20cafeteria%20software%20with%20blue%20and%20white%20design&width=300&height=200&seq=canteenhome&orientation=landscape",
                 description: "End-to-end cafeteria operations management solution"
               },
               {
-                name: "Hostel Management",
+                name: "Hostel Management Solution",
                 status: "Available", 
                 icon: "🏠",
                 image: "https://readdy.ai/api/search-image?query=hostel%20management%20software%20dashboard%20showing%20room%20allocation%2C%20student%20records%20and%20fee%20management%2C%20dormitory%20administration%20system%20with%20modern%20blue%20interface&width=300&height=200&seq=hostelhome&orientation=landscape",
-                description: "Complete accommodation management for educational institutions"
+                description: "Complete management for educational institutions"
               },
               {
-                name: "Custom Solutions",
+                name: "Customized Research & Solutions",
                 status: "Available",
                 icon: "⚙️",
                 image: "https://readdy.ai/api/search-image?query=custom%20software%20development%20process%20showing%20coding%20screens%2C%20project%20planning%20boards%20and%20system%20architecture%20diagrams%2C%20bespoke%20software%20solutions%20with%20modern%20development%20environment&width=300&height=200&seq=customhome&orientation=landscape",

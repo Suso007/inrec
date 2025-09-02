@@ -22,7 +22,7 @@ export default function Blogs() {
         />
         
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-6xl md:text-8xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center pb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             INREC Blog
           </h1>
         </ScrollAnimatedElement>
@@ -195,7 +195,7 @@ export default function Blogs() {
               }
             ].map((article, index) => (
               <ScrollAnimatedElement key={index} animation="fade" delay={index * 100}>
-                <article className="bg-white/90 backdrop-blur-sm border-2 border-slate-200 hover:border-blue-300 transition-all duration-300 rounded-lg shadow-lg overflow-hidden group cursor-pointer">
+                <article className="h-full bg-white/90 backdrop-blur-sm border-2 border-slate-200 hover:border-blue-300 transition-all duration-300 rounded-lg shadow-lg overflow-hidden group cursor-pointer">
                   <img 
                     src={article.image}
                     alt={article.title}

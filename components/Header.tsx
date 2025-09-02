@@ -50,7 +50,7 @@ export default function Header() {
     isScrolled ? 'text-base sm:text-lg' : 'text-lg sm:text-xl lg:text-2xl'
   }`}
 >
-  INREC
+  inrec
 </span>
 
               <span

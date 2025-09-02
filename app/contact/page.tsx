@@ -261,26 +261,26 @@ export default function Contact() {
                 city: "Tech City Headquarters",
                 address: "Domkol Bazar, Murshidabad, West Bengal, India - 742303",
                 phone: "+91-9830029529",
-                email: "info@inrec.com",
+                email: "info@inrec.in",
                 image: "https://readdy.ai/api/search-image?query=modern%20corporate%20headquarters%20building%20with%20glass%20facade%20and%20blue%20accents%2C%20professional%20technology%20company%20office%20building%2C%20contemporary%20architecture%20with%20clean%20lines&width=400&height=300&seq=inrechq&orientation=landscape"
               },
               {
                 city: "Office 2",
                 address: "Comming soon...",
                 phone: "Comming soon...",
-                email: "info@inrec.com",
+                email: "info@inrec.in",
                 image: "https://readdy.ai/api/search-image?query=modern%20office%20building%20in%20San%20Francisco%20with%20contemporary%20design%2C%20professional%20tech%20company%20facility%20on%20west%20coast%2C%20sleek%20architecture%20with%20blue%20and%20white%20elements&width=400&height=300&seq=inrecwest&orientation=landscape"
               },
               {
                 city: "Office 3",
                 address: "Comming soon...",
                 phone: "Comming soon...",
-                email: "info@inrec.com",
+                email: "info@inrec.in",
                 image: "https://readdy.ai/api/search-image?query=modern%20European%20office%20building%20in%20London%20with%20professional%20design%2C%20contemporary%20corporate%20facility%2C%20international%20business%20center%20with%20blue%20corporate%20theme&width=400&height=300&seq=inreceurope&orientation=landscape"
               }
             ].map((location, index) => (
               <ScrollAnimatedElement key={index} animation="fade" delay={index * 200}>
-                <div className="bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden">
+                <div className="h-full bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden">
                   <img 
                     src={location.image}
                     alt={location.city}

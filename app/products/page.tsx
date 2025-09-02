@@ -115,13 +115,13 @@ export default function Products() {
         />
         
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-6xl md:text-8xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             Our Products
           </h1>
         </ScrollAnimatedElement>
 
         <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-gray-600">
+          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed bg-gradient-to-r from-cyan-200 to-pink-500 bg-clip-text text-transparent drop-shadow-md">
             Cutting-edge drone technology and innovative software solutions
           </p>
         </ScrollAnimatedElement>
@@ -234,7 +234,7 @@ export default function Products() {
               }
             ].map((drone, index) => (
               <ScrollAnimatedElement key={index} animation="fade" delay={index * 300}>
-                <div className="bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="bg-white/90 backdrop-blur-sm border-2 border-blue-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-full">
                   <img 
                     src={drone.image}
                     alt={drone.name}
