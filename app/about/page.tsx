@@ -56,20 +56,22 @@ export default function About() {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
         <div
-          className="absolute inset-0 opacity-80"
+          className="absolute inset-0 opacity-90
+          
+          0"
           style={{
             backgroundImage: `url('https://readdy.ai/api/search-image?query=modern%20technology%20company%20office%20with%20professional%20team%20working%20on%20drone%20development%2C%20clean%20minimalist%20workspace%20with%20blue%20and%20white%20design%2C%20innovative%20tech%20environment%20with%20advanced%20equipment%20and%20computers&width=1920&height=1080&seq=inrecabouthero&orientation=landscape')`,
           }}
         />
 
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight text-white bg-clip-text text-transparent">
             About INREC
           </h1>
         </ScrollAnimatedElement>
 
         <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent drop-shadow-md">
+          <p className="text-2xl md:text-3xl text-center max-w-4xl text-sky-50 leading-relaxed [text-shadow:0_1px_2px_rgba(0,0,0,.45)]">
             Pioneering the future of drone technology with innovation,
             precision, and excellence
           </p>

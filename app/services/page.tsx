@@ -15,20 +15,20 @@ export default function Services() {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
         <div 
-          className="absolute inset-0 opacity-50"
+          className="absolute inset-0 opacity-90"
           style={{
             backgroundImage: `url('https://readdy.ai/api/search-image?query=professional%20drone%20services%20team%20working%20with%20advanced%20UAV%20technology%2C%20technical%20experts%20providing%20consultation%20and%20training%2C%20modern%20service%20center%20with%20blue%20lighting%20and%20professional%20equipment&width=1920&height=1080&seq=inrecserviceshero&orientation=landscape')`
           }}
         />
         
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight text-white drop-shadow-2xl">
             Our Services
           </h1>
         </ScrollAnimatedElement>
 
         <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent drop-shadow-md">
+          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-sky-50 drop-shadow-md">
             Complete drone solutions from consultation to deployment and ongoing support
           </p>
         </ScrollAnimatedElement>

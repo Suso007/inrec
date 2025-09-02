@@ -15,20 +15,20 @@ export default function Blogs() {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
         <div 
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-70"
           style={{
             backgroundImage: `url('https://readdy.ai/api/search-image?query=modern%20technology%20blog%20and%20news%20center%20with%20digital%20displays%20showing%20drone%20content%2C%20professional%20media%20workspace%20with%20blue%20lighting%2C%20tech%20journalism%20and%20content%20creation%20environment&width=1920&height=1080&seq=inrecblogshero&orientation=landscape')`
           }}
         />
         
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-3xl md:text-7xl font-bold text-center pb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center pb-8 leading-tight text-white drop-shadow-2xl">
             INREC Blog
           </h1>
         </ScrollAnimatedElement>
 
         <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-gray-600">
+          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-sky-50 drop-shadow-md">
             Latest insights, trends, and innovations in drone technology
           </p>
         </ScrollAnimatedElement>

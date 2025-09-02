@@ -108,20 +108,20 @@ export default function Products() {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden pt-24">
         <div 
-          className="absolute inset-0 opacity-80"
+          className="absolute inset-0 opacity-90"
           style={{
             backgroundImage: `url('https://readdy.ai/api/search-image?query=collection%20of%20professional%20drones%20and%20UAV%20products%20displayed%20in%20modern%20tech%20showroom%20with%20software%20development%20screens%2C%20various%20drone%20models%20with%20blue%20lighting%20and%20computer%20monitors%20showing%20software%20interfaces%2C%20cutting-edge%20technology%20showcase&width=1920&height=1080&seq=inrecproductshero2&orientation=landscape')`
           }}
         />
         
         <ScrollAnimatedElement animation="fade">
-          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-7xl font-bold text-center mb-8 leading-tight text-white drop-shadow-2xl">
             Our Products
           </h1>
         </ScrollAnimatedElement>
 
         <ScrollAnimatedElement animation="fade" delay={300}>
-          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed bg-gradient-to-r from-cyan-200 to-pink-500 bg-clip-text text-transparent drop-shadow-md">
+          <p className="text-2xl md:text-3xl text-center max-w-4xl leading-relaxed text-sky-50 drop-shadow-md">
             Cutting-edge drone technology and innovative software solutions
           </p>
         </ScrollAnimatedElement>
