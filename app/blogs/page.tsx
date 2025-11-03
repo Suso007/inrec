@@ -23,7 +23,7 @@ export default function Blogs() {
         
         <ScrollAnimatedElement animation="fade">
           <h1 className="text-3xl md:text-7xl font-bold text-center pb-8 leading-tight text-white drop-shadow-2xl">
-            INREC Blog
+            INREC Blogs
           </h1>
         </ScrollAnimatedElement>
 
